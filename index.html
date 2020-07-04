@@ -43,11 +43,26 @@
 					<label>Depth</label>
 					<div class="depth_choices" id="depth">
 						<ul>
-							<li data-value="1">1</li>
-							<li data-value="2">2</li>
-							<li data-value="3">3</li>
-							<li data-value="4">4</li>
+							<li data-value="1" onclick="difficulty(1)">1</li>
+							<li data-value="2" onclick="difficulty(2)">2</li>
+							<li data-value="3" onclick="difficulty(3)">3</li>
+							<li data-value="4" onclick="difficulty(4)">4</li>
 							<li data-value="-1" class="active">Unlimited</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="field">
+					<label>Size</label>
+					<div class="size_choices" id=size>
+						<ul>
+							<li onclick="makeBoard(3)">3x3</li>
+							<li onclick="makeBoard(4)">4x4</li>
+							<li onclick="makeBoard(5)">5x5</li>
+							<li onclick="makeBoard(6)">6x6</li>
+							<li onclick="makeBoard(7)">7x7</li>
+							<li onclick="makeBoard(8)">8x8</li>
+							<li onclick="makeBoard(9)">9x9</li>
 						</ul>
 					</div>
 				</div>
@@ -56,8 +71,8 @@
 					<label>Starting Player</label>
 					<div class="starting_player_choices" id="starting_player">
 						<ul>
-							<li data-value="1" class="active" onclick="setfirst('hu')">Human</li>
-							<li data-value="0" onclick="setfirst('co')">Computer</li>
+							<li data-value="1" onclick="setFirst('hu')">Human</li>
+							<li data-value="0" onclick="setFirst('co')">Computer</li>
 						</ul> 
 					</div>
 				</div>
@@ -69,6 +84,7 @@
 
 		<div id="board_wrap">
 			<div id="board">
+				<!--
 				<div id="cell-0" onclick="playermoved(0)"></div>
 				<div id="cell-1" onclick="playermoved(1)"></div>
 				<div id="cell-2" onclick="playermoved(2)"></div>
@@ -78,6 +94,7 @@
 				<div id="cell-6" onclick="playermoved(6)"></div>
 				<div id="cell-7" onclick="playermoved(7)"></div>
 				<div id="cell-8" onclick="playermoved(8)"></div>
+				-->
 			</div>
 		</div>
 	</div>
