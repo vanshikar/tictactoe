@@ -15,6 +15,8 @@ function clearBoard()
     //write code to print clean board
     //code to initialise new board
         board = ['-','-','-','-','-','-','-','-','-'];
+        let blank=document.getElementById("board");
+        blank.innerHTML='<div id="cell-0" onclick="playermoved(0)"></div><div id="cell-1" onclick="playermoved(1)"></div><div id="cell-2" onclick="playermoved(2)"></div><div id="cell-3" onclick="playermoved(3)"></div><div id="cell-4" onclick="playermoved(4)"></div<div id="cell-5" onclick="playermoved(5)"></div><div id="cell-6" onclick="playermoved(6)"></div><div id="cell-7" onclick="playermoved(7)"></div><div id="cell-8" onclick="playermoved(8)"></div>';
     //check if starting player is human or computer
     //starting player is human
     // as soon as move is made call return best move function
