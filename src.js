@@ -1,7 +1,7 @@
 
 
 //global variables
-var board = [['-','-','-'],['-','-','-'],['-','-','-']];
+var board = ['-','-','-','-','-','-','-','-','-'];
 var compfirst = false;
 var maxdepth= -1;
 var boardSize=3;
@@ -23,6 +23,7 @@ function difficulty(depth){
 function clearBoard()
 {
     //clear the board
+    board = ['-','-','-','-','-','-','-','-','-'];
     let blank=document.getElementById("board");
     if(boardSize==3)
         blank.innerHTML='<div id="cell-0" onclick="playermoved(0)"></div><div id="cell-1" onclick="playermoved(1)"></div><div id="cell-2" onclick="playermoved(2)"></div><div id="cell-3" onclick="playermoved(3)"></div><div id="cell-4" onclick="playermoved(4)"></div><div id="cell-5" onclick="playermoved(5)"></div><div id="cell-6" onclick="playermoved(6)"></div><div id="cell-7" onclick="playermoved(7)"></div><div id="cell-8" onclick="playermoved(8)"></div>';
@@ -32,9 +33,9 @@ function clearBoard()
     {
         //for first move, randomly choosing between [0,2,4,6,8]
         var arr=[0,2,4,6,8];
-        var ans=arr[Math.floor(Math.random()*arr.length)];
+        var ans=arr[ans];
         //board[ans] = 'x';
-        board[Math.floor(ans/boardSize)][ans%boardSize]='x';
+        board[ans]='x';
         printMove(ans,'x');
        // console.log(board);
     }
@@ -51,14 +52,15 @@ function gameOver(res)
 
 function playermoved(move)
 {
-    board[Math.floor(move/boardSize)][Math.floor(move%boardSize)] = 'o';
+    board[move] = 'o';
     printMove(move,'o');
     var temp = evalBoard();
+    console.log(temp);
     if(temp!='n') gameOver(temp);
     else
     {
         var ans = returnbestmove();
-        board[Math.floor(ans/boardSize)][ans%boardSize] = 'x';
+        board[ans] = 'x';
         printMove(ans,'x');
         var temp1 = evalBoard();
         if(temp1!='n') gameOver(temp1);
