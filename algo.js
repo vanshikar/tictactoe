@@ -13,7 +13,7 @@ function returnbestmove()
                 //make the move
                 board[i] = 'x';
                 //evaluate score on making this move
-                var temp = returnScore(false,0);
+                var temp = returnScore(false,0,-1000,1000);
                 if(temp>score)
                 {
                     //update this move as the best move so far
@@ -77,7 +77,7 @@ function evalBoard()
     return 'n';
 }
   
-function returnScore(isMax,depth)
+function returnScore(isMax,depth,alpha,beta)
 {
     //return -10 if o is winner
     //return +10 if x is winner
@@ -102,9 +102,11 @@ function returnScore(isMax,depth)
                 if(board[i]=='-')
                 {
                     board[i]='x';
-                    var temp = returnScore(false,depth+1);
+                    var temp = returnScore(false,depth+1,alpha,beta);
                     score = Math.max(score,temp);
+                    alpha = Math.max(score,alpha);
                     board[i] = '-';
+                    if(alpha>=beta) break;
         
                 }
             
@@ -120,7 +122,9 @@ function returnScore(isMax,depth)
                     board[i]='o';
                     var temp = returnScore(true,depth+1);
                     score = Math.min(score,temp);
+                    beta = Math.min(score,beta);
                     board[i] = '-';
+                    if(alpha>=beta) break;
         
                 } 
             
