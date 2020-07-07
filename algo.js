@@ -1,3 +1,5 @@
+
+
 function returnbestmove()
 {
     //check if we have a winner
@@ -38,10 +40,7 @@ function evalBoard()
 
 
     //check for ties
-    var isfull = true;
-    for(var i =0;i<9;i++)
-            if(board[i]=='-') isfull=false;
-    if(isfull) return 't';
+   
     
     //check for wins
     for(let i=0;i<9;i+=3){
@@ -73,6 +72,11 @@ function evalBoard()
             if(board[2]=='x') return 'x';
         }
     }
+
+    var isfull = true;
+    for(var i =0;i<9;i++)
+            if(board[i]=='-') isfull=false;
+    if(isfull) return 't';
     
     return 'n';
 }
@@ -120,7 +124,7 @@ function returnScore(isMax,depth,alpha,beta)
                 if(board[i]=='-')
                 {
                     board[i]='o';
-                    var temp = returnScore(true,depth+1);
+                    var temp = returnScore(true,depth+1,alpha,beta);
                     score = Math.min(score,temp);
                     beta = Math.min(score,beta);
                     board[i] = '-';

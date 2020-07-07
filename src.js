@@ -48,6 +48,7 @@ function gameOver(res)
         for(let i=0;i<9;i++)
     document.getElementById("cell-"+i).onclick=null;
     }
+    
 }
 
 function playermoved(move)
@@ -60,6 +61,7 @@ function playermoved(move)
     else
     {
         var ans = returnbestmove();
+        console.log(ans);
         board[ans] = 'x';
         printMove(ans,'x');
         var temp1 = evalBoard();
