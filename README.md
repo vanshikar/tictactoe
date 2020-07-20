@@ -1,2 +1,2 @@
 # tictactoe
-NXN and Ultimate
+# NXN and Ultimate
