@@ -10,5 +10,5 @@
 # Documentation
  View the detailed [documentation](https://drive.google.com/drive/folders/1xtOBAmpFcy83XqYsKeygjr-FVOqYYMRd?usp=sharing)
     
-#Play the Game
+# Play the Game
 [Tic Tac Toe](https://vanshikar.github.io/tictactoe/)
