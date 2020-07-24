@@ -1,7 +1,7 @@
 # NxN Tic Tac Toe and Ultimate Tic Tac Toe using javascript
-    This project uses minimax algorithm to built an artificial intelligence agent
-    which plays N by N tic tac toe and ultimate tic tac toe.
-    There are two separate HTML pages for NxN and ultimate tic tac toe.
+    This project uses minimax algorithm with Alpha Beta Pruning to build an artificial intelligence agent
+    which can play N by N tic tac toe and Ultimate tic tac toe.
+    
 # Usage
     Press new game
     select difficulty, board size and first player options
