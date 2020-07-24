@@ -58,7 +58,7 @@ function setDifficultyAndSize(){
     else if(document.getElementById('s4').classList.contains('active')){
         n=4;
         if(document.getElementById('depth-1').classList.contains('active'))
-            maxDepth=10;
+            maxDepth=9;
         else if(document.getElementById('depth4').classList.contains('active'))
             maxDepth=8;
         else if(document.getElementById('depth3').classList.contains('active'))
@@ -72,15 +72,15 @@ function setDifficultyAndSize(){
     else if(document.getElementById('s5').classList.contains('active')){
         n=5;
         if(document.getElementById('depth-1').classList.contains('active'))
-            maxDepth=8;
-        else if(document.getElementById('depth4').classList.contains('active'))
             maxDepth=7;
-        else if(document.getElementById('depth3').classList.contains('active'))
+        else if(document.getElementById('depth4').classList.contains('active'))
             maxDepth=6;
-        else if(document.getElementById('depth2').classList.contains('active'))
+        else if(document.getElementById('depth3').classList.contains('active'))
             maxDepth=5;
-        else if(document.getElementById('depth1').classList.contains('active'))
+        else if(document.getElementById('depth2').classList.contains('active'))
             maxDepth=4;
+        else if(document.getElementById('depth1').classList.contains('active'))
+            maxDepth=3;
     }
 
     else if(document.getElementById('s6').classList.contains('active')){
