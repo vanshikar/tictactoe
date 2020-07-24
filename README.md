@@ -8,4 +8,4 @@
     and press start game to start playing.
     In ultimate tic tac toe, grey highlighted cells indicate possible moves.
 # Documentation
-    Follow this link to view the detailed [documentation](https://drive.google.com/drive/folders/1xtOBAmpFcy83XqYsKeygjr-FVOqYYMRd?usp=sharing)
+    Follow this link to view the detailed [documentation](https://drive.google.com/drive/folders/1xtOBAmpFcy83XqYsKeygjr-FVOqYYMRd?usp=sharing "documentation")
