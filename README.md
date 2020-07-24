@@ -1,5 +1,6 @@
 # NxN Tic Tac Toe and Ultimate Tic Tac Toe using javascript
-    This project uses minimax algorithm with Alpha Beta Pruning to build an artificial intelligence agent
+    This project uses minimax algorithm with Alpha Beta Pruning
+    to build an artificial intelligence agent
     which can play N by N tic tac toe and Ultimate tic tac toe.
     
 # Usage
