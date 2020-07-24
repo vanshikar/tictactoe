@@ -1,9 +1,9 @@
-function getBestMove(i,depth,isMax,alpha,beta)
+function minimax(i,depth,isMax,alpha,beta)
 {
    //base case
    //win lose or tie
    //check for base cases and return score associated and update the best move
-   var bigStat = evalboard();
+   var bigStat = evalBoardScore();
    if(bigStat != 'n')
    {
        if(bigStat == 'x') return 1000-depth;
@@ -43,7 +43,7 @@ function getBestMove(i,depth,isMax,alpha,beta)
            if(sboard[j]=='-')
            {
                 makeMove(i,j,'x');
-                var temp = getBestMove(j,depth+1,false,alpha,beta);
+                var temp = minimax(j,depth+1,false,alpha,beta);
                 if(temp > score)
                  {
                     score = temp;
@@ -68,7 +68,7 @@ function getBestMove(i,depth,isMax,alpha,beta)
            if(sboard[j]=='-')
            {
             makeMove(i,j,'o');
-            var temp = getBestMove(j,depth+1,true,alpha,beta);
+            var temp = minimax(j,depth+1,true,alpha,beta);
             if(temp < score)
             {
                 score = temp;
@@ -85,7 +85,7 @@ function getBestMove(i,depth,isMax,alpha,beta)
     }
 }
 
-function evalboard()
+function evalBoardScore()
 {
     //checking rows
     for(var i = 0;i<9;i+=3)

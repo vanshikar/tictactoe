@@ -816,18 +816,7 @@
         #board [id^="cell-"].o:after {
           content: '';
           background-image: url(../dist/assets/o.svg); }*/
-      #board #cell3-0, #board #cell3-1, #board #cell3-2, #board #cell4-0, #board #cell4-1, #board #cell4-2, #board #cell4-3, #board #cell5-0, #board #cell5-1, #board #cell5-2, #board #cell5-3, #board #cell5-4 {
-        border-top: none; }
-      #board #cell3-2, #board #cell3-5, #board #cell3-8,#board #cell4-3, #board #cell4-7,#board #cell4-11, #board #cell4-15, #board #cell5-4, #board #cell5-9, #board #cell5-14, #board #cell5-19,#board #cell5-24 {
-        border-right: none; }
-        #board #cell3-0, #board #cell3-3, #board #cell3-6, #board #cell4-0, #board #cell4-4, #board #cell4-8, #board #cell4-12, #board #cell5-0, #board #cell5-5, #board #cell5-10, #board #cell5-15, #board #cell5-20 {
-        border-left: none; }
-        #board #cell3-6, #board #cell3-7, #board #cell3-8, #board #cell4-12, #board #cell4-13, #board #cell4-14, #board #cell4-15, #board #cell5-20, #board #cell5-21, #board #cell5-22, #board #cell5-23, #board #cell5-24  {
-        border-bottom: none; }
-        #Ultimate{
-          width: 100%;
-          text-align: center;
-        }
+
         
     /*# sourceMappingURL=style.css.map*/
   #board #cell3-0, #board #cell3-1, #board #cell3-2, #board #cell4-0, #board #cell4-1, #board #cell4-2, #board #cell4-3, #board #cell5-0, #board #cell5-1, #board #cell5-2, #board #cell5-3, #board #cell5-4,#board #cell6-0, #board #cell6-1,#board #cell6-2,#board #cell6-3, #board #cell6-4,#board #cell6-5,#board #cell6-6 {

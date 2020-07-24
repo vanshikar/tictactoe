@@ -40,6 +40,7 @@ function activateSize(size){
 }
 
 function setDifficultyAndSize(){
+
     if(document.getElementById('s3').classList.contains('active')){
         n=3;
         if(document.getElementById('depth-1').classList.contains('active'))
@@ -96,6 +97,15 @@ function setDifficultyAndSize(){
             maxDepth=1;
     }
 
+    //add class size to board
+    for(let i=3;i<7;i++){
+        let place=document.getElementById('board');
+        if(place.classList.contains(i)){
+            place.classList.remove(i);
+            break;
+        }
+    }
+    document.getElementById('board').classList.add(n);
     console.log('depth= '+maxDepth);
     console.log('size= '+n);
 }

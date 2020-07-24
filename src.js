@@ -153,6 +153,7 @@ function drawWinningLine(win)
     winn = win;
     document.getElementById("board").classList.add(win);
     document.getElementById("board").classList.add('full');
+    console.log(win);
 }
 
     
@@ -169,7 +170,6 @@ function playerMoved(move)
         printMove(ans,'x');
         console.log(board);
         var temp1 = evalBoardScore(ans);
-        //console.log(temp1);
         if(temp1!='n') gameOver(temp1);
     }    
 }

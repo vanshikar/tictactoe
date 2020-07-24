@@ -1,15 +1,11 @@
 //hash map  //key is board value is score
 //var memo={};
 
-var storemin=[];
-var storemax=[];
-
 var arr=[];
  
 function returnBestMove()
 {
-    //check if we have a winner
-    //initilaise move and score associated with it
+    //set move and score to best possible outcome
     var move;
     var score = -1000;
     for(var i =0;i<n*n;i++)
@@ -20,7 +16,7 @@ function returnBestMove()
             //make the move
             setBoard(i,'x');
             //evaluate score on making this move
-            var temp = returnScore(false,0,-1000,1000,i);
+            var temp = minimax(false,0,-1000,1000,i);
             if(temp>score)
             {
                 arr.length=0;
@@ -83,8 +79,9 @@ function evalBoardScore(lastMove)
     if(isfull) return 't';
     return 'n';
 }
-    
-function returnScore(isMax,depth,alpha,beta,lastMove)
+
+//Minimax Algorithm with Alpha-Beta Pruning
+function minimax(isMax,depth,alpha,beta,lastMove)
 {
     //check if either player is winner
     //return -10 if o is winner
@@ -114,7 +111,7 @@ function returnScore(isMax,depth,alpha,beta,lastMove)
                 //if(board in memo)
                 //    temp=memo[board];
                 //else{
-                    temp = returnScore(false,depth+1,alpha,beta,i);
+                    temp = minimax(false,depth+1,alpha,beta,i);
                     //inserting in hashmap
                     //memo[board]=temp;
                 //}
@@ -122,7 +119,6 @@ function returnScore(isMax,depth,alpha,beta,lastMove)
                 alpha = Math.max(score,alpha);
                 setBoard(i,'-');
                 if(alpha>=beta){
-                    //storemax.push(i);
                     break;
                 }
     
@@ -142,14 +138,13 @@ function returnScore(isMax,depth,alpha,beta,lastMove)
                 //if(board in memo)
                 //    temp=memo[board];
                 //else{
-                    temp = returnScore(true,depth+1,alpha,beta,i);
+                    temp = minimax(true,depth+1,alpha,beta,i);
                  //   memo[board]=temp;
                 //}
                 score = Math.min(score,temp);
                 beta = Math.min(score,beta);
                 setBoard(i,'-');
                 if(alpha>=beta){
-                    //storemin.push(i);
                     break;
                 }    
             } 

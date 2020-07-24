@@ -58,7 +58,6 @@ function startGame()
         }
     }
 
-    //call computer to make first move
     if(compFirst)    compFirstMove();
     
 
@@ -129,7 +128,6 @@ function compFirstMove(){
     makeMove(bmove,smove,'x');
     printMove(bmove,smove,'x');
     setBoard(bmove,smove);
-    //console.log(board);
 }
 
 
@@ -137,13 +135,13 @@ function printMove(bmove,smove,symbol){
     var img=document.createElement("img");
     if(symbol=='o')
     {
-        img.src="images/humanface.png";
+        img.src="../images/humanface.png";
         img.style.width='50%';
     }
         
     else if(symbol=='x')
     {
-        img.src="images/robotface.png";
+        img.src="../images/robotface.png";
         img.style.width='60%';
     }
     let place=document.getElementById("cell9-"+bmove+smove);
@@ -160,16 +158,15 @@ function wonlocal(sym,bn)
     for(var i = 0;i<9;i++)
     {
         document.getElementById("cell9-"+bn+i).classList.remove('highlightCell');
-        //document.getElementById("cell9-"+bn+i).classList.add('won'+sym);
     }
     var img=document.createElement("img");
     if(sym=='o')
     {
-        img.src="images/humanface.png";
+        img.src="../images/humanface.png";
     }
     else if(sym=='x')
     {
-        img.src="images/robotface.png";
+        img.src="../images/robotface.png";
     }
     img.classList.add('won'+bn+sym);
     let place = document.getElementById('board').appendChild(img);
@@ -181,17 +178,16 @@ function wonlocal(sym,bn)
 function playerMoved(bmove,smove)
 {
     makeMove(bmove,smove,'o');
-    if(bigboardstatus[bmove]=='o') wonlocal('o',bmove);
+    if(bigboardstatus[bmove]=='o')
+        wonlocal('o',bmove);
     printMove(bmove,smove,'o');
     setBoard(bmove,smove);
-    var bigStat = evalboard();
+    var bigStat = evalBoardScore();
     
     if(bigStat != 'n')
     {
-        //this means player has won or it is a draw 
-        //gameover
         console.log("game over");
-        console.log('bigStat= '+bigStat);
+        //console.log('bigStat= '+bigStat);
         endGame(bigStat);
     }
     else
@@ -200,16 +196,15 @@ function playerMoved(bmove,smove)
       sans = 0;
       bans = 0;
       console.log("called it with "+smove);
-      var temp = getBestMove(smove,0,true,-10000,10000);
+      var temp = minimax(smove,0,true,-10000,10000);
       console.log("bans is "+ bans + "sans is " + sans);
       makeMove(bans,sans,'x');
       if(bigboardstatus[bans]=='x') wonlocal('x',bans);
       printMove(bans,sans,'x');
       setBoard(bans,sans);
-      var bigStat = evalboard();
+      var bigStat = evalBoardScore();
       if(bigStat != 'n')
         {
-            //this means player has won or it is a draw
             console.log("game over");
             console.log('bigStat= '+bigStat);
             endGame(bigStat);
@@ -232,7 +227,6 @@ function setBoard(bmove,smove){
                 continue;
             else{
                 for(let j=0;j<9;j++){
-                    //console.log("cell9-"+i+j);
                     let place=document.getElementById("cell9-"+i+j);
                     place.onclick=null;
                     place.classList.remove('highlightCell');
@@ -255,7 +249,6 @@ function setBoard(bmove,smove){
         for(let j=0;j<9;j++)
         document.getElementById("cell9-"+smove+j).classList.add('highlightCell');
         
-        //console.log('smove='+smove);
         if(smove!=bmove){
             for(let j=0;j<9;j++){
                 let currBoard=document.getElementById("cell9-"+bmove+j);
